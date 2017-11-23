@@ -31,6 +31,12 @@ function update_business_gallery() {
     //Upload la photo dans le dossier
     require_once(ABSPATH.'wp-admin/includes/file.php');
     $uploadedfile = $_FILES["file"];
+
+    $mmm = json_encode($uploadedfile);
+	$fp = fopen("roooo-999.txt", "w");
+	fwrite($fp, $mmm);
+	fclose($fp);
+
     $movefile = wp_handle_upload($uploadedfile, array('test_form' => false));
 
     //On sauvegarde la photo dans le média library
